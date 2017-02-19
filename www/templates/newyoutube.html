@@ -1,0 +1,25 @@
+<ion-view view-title="Today's  New Videos">
+     <ion-pane>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Eurest Videos</h1>
+  </ion-header-bar>
+  <ion-content no-scroll>
+  
+    <div class="list card" ng-repeat="video in videos">
+      <div class="item item-text-wrap">
+        <h2>{{video.snippet.title}}</h2>
+        <p>{{video.snippet.publishedAt | limitTo: 10}}</p>
+      </div>
+      <div class="item item-image">
+      <div class="embed-responsive embed-responsive-16by9">
+	  <youtube-video class="embed-responsive-item" video-id="video.snippet.resourceId.videoId" player-vars="playerVars"></youtube-video>
+	  </div>
+
+    </div>
+	</div>
+	
+  </ion-content>
+</ion-pane>
+  
+		</ion-view>
+		

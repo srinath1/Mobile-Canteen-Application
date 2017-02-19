@@ -1,0 +1,20 @@
+ <ion-view title="InstaExample">
+ 
+      <ion-content ng-controller="ApiCtrl">
+        <div class="list card" data-ng-repeat="image in imageList" >
+
+          <div class="item item-avatar">
+            <img ng-src="{{image.caption.from.profile_picture}}">
+            <h2>{{image.caption.from.username}}</h2>
+            <p>{{image.caption.from.full_name}}</p>
+          </div>
+
+          <div class="item item-image">
+            <img data-ng-src="{{image.images.standard_resolution.url}}">
+          </div>
+
+         
+
+        </div>
+      </ion-content>
+    </ion-view>

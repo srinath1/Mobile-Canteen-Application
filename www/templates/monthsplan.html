@@ -1,0 +1,23 @@
+ <ion-view view-title="This Month's Menu" >
+ <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+ <ion-content>
+ 
+ <div class="card">
+    <div  style="background: white font-size:300% " ui-calendar='uiConfig.calendar' ng-model='eventSources' width='400' height='400'></div>
+  </div>
+  <div class="list">
+    <div class="item item item-text-wrap item-energized" style=" text-align: left;">
+	<center>
+      Events in {{select_date}}
+	  </center>
+    </div>
+    <div class="item positive-bg  item-text-wrap" ng-repeat="event in events_in_select_date" >
+	<center>
+      {{event.title}}
+      </center>
+    </div>
+  </div>
+   </ion-content>
+</ion-view>

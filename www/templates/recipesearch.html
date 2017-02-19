@@ -1,0 +1,58 @@
+ <ion-view title="Search The Recipe">
+ 
+      <ion-content >
+	  <div class="item item-input-inset">
+  <label class="item-input-wrapper">
+  <!-- The actual input tag which is bound to the todoInput using ng-model -->
+    <input type="text" placeholder="search"  id="search" size="30"> 
+  </label>
+  
+  
+ 
+  <!-- Our button thay will call our funtion to add a new todo item -->
+  
+</div>
+ <input type="button" button class=" button button-block button-assertive" id="button" ng-click="getRecipes()" value="Search Recipes">
+ 
+</button>
+
+	  
+	
+        <div class="list card" data-ng-repeat="x in recipes track by $index" >
+
+          
+
+          <div class="item item-image">
+		   <h3><a ng-href="{{ x.recipe.url}}" target="_blank">{{ x.recipe.label}}</a></h3>
+		  
+            <img data-ng-src="{{ x.recipe.image}}">
+			
+			 </div>
+			 <ul>
+			 <li><h4>Serves: {{ x.recipe.yield }}</h4></li>
+					<li ng-repeat="y in x.recipe.ingredientLines">{{ y }}</li>
+				</ul>
+			
+			
+			
+			
+          
+		    <div class="item tabs tabs-energy tabs-icon-left">
+				
+		
+	  
+        <a class="tab-item"  ng-click="shareAnywhere(instagramimage, null)">
+          <i class="icon ion-ios-upload-outline"></i>
+		  <strong>
+          Share
+		  </strong>
+		  </a>
+		 
+		         
+
+        </div>
+      </ion-content>
+    </ion-view>
+	
+	
+		

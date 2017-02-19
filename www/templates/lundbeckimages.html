@@ -1,0 +1,36 @@
+ <ion-view title="Instagram Images">
+ 
+      <ion-content ng-controller="ApiCtrl">
+        <div class="list card" data-ng-repeat="image in imageList" >
+
+          
+
+          <div class="item item-image">
+            <img data-ng-src="{{image.images.standard_resolution.url}}">
+			 </div>
+			
+			
+			
+			
+          
+		    <div class="item tabs tabs-energy tabs-icon-left">
+			<strong>
+			
+	            <p data-ng-bind-html= "image.caption.text"></p>  
+</strong>		
+		
+	  
+        <a class="tab-item"  ng-click="shareAnywhere(instagramimage, null)">
+          <i class="icon ion-ios-upload-outline"></i>
+		  <strong>
+          Share
+		  </strong>
+		  </a>
+		 
+		 
+
+         
+
+        </div>
+      </ion-content>
+    </ion-view>

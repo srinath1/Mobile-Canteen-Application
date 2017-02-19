@@ -1,0 +1,60 @@
+<ion-view view-title="Today's Menu">
+   <ion-content class="post-content">
+   	<ion-refresher
+       	pulling-text="Pull to refresh..."
+       	on-refresh="doRefresh()">
+     	</ion-refresher>
+		
+		
+		
+		
+		
+
+		  <div class="list  card " ng-repeat="item in posts">
+		  
+       
+	   <div class="item item-avatar item-energized">
+		  <img    ng-src="{{item.acf.test.url}}"  />
+		  
+        
+      
+		   <h2 ng-bind-html="item.title.rendered"></h2>
+		    <h6  ng-bind-html= <span>Day's<strong>|</strong></span><span am-time-ago="item.date"></span></h6>
+		  
+      </div>
+		  
+      
+      <div class="item item-body ">
+      <img class="full-image" ng-if="item.better_featured_image" ng-src="{{item.better_featured_image.source_url}}"  /><p ng-if="item.excerpt.rendered" ng-bind-html="item.excerpt.rendered"></p>
+	  </div>
+	  <div class="item tabs tabs-energy tabs-icon-left">
+	                
+	       <a class="tab-item  positive"  ng-click="shareAnywhere(post.title.rendered, post.link)">
+          <i class="icon ion-forward"></i>
+          Share
+		  </a>
+              
+        <a class="tab-item assertive"  href="#/app/posts/{{item.id}}">
+          <i class="icon ion-log-in"></i>
+               Read More
+             </a>
+		 
+      </div>
+	 
+	   
+      </div>
+	   
+	                  
+	  
+       
+		 
+      
+    
+    <ion-infinite-scroll
+	ng-if="moreDataExists()"
+    on-infinite="loadMore()"
+    distance="1%"
+    immediate-check="false">
+</ion-infinite-scroll>
+   </ion-content>
+</ion-view>

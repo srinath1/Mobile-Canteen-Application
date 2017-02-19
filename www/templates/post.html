@@ -1,0 +1,70 @@
+<ion-view>
+	<ion-nav-title>
+  {{::post.title.rendered}}
+	</ion-nav-title>
+  <ion-content class="padding">
+  <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+  	<div class="list card  ">
+	<div class="item item-avatar item-energized">
+	 <img ng-src="{{post.acf.test.url}}"/>         
+           
+            <h2>{{post.acf.cook}}</h2>
+			<h2>Dept:{{post.acf.department}}</h2>
+           
+          </div>
+	<div class="item item-body">
+	
+  		
+		<img class="full-image" ng-if="post.better_featured_image" ng-src="{{post.better_featured_image.source_url}}"  /> 
+				
+		<h2 ng-bind-html="post.title.rendered"></h2>
+		
+		 
+		   <h6  ng-bind-html= <span>Day's<strong>|</strong></span><span am-time-ago="post.date"></span></h6>
+		   
+		<div  ng-if="post.content.rendered" ng-bind-html="post.content.rendered| html_filters">
+		 </div>
+		</div>
+  		
+  		 		
+		
+			
+			
+	    
+
+      <div class="item tabs tabs-energy tabs-icon-left">
+	                 
+	  
+        <a class="tab-item positive"  ng-click="shareAnywhere(post.title.rendered, post.link)">
+          <i class="icon ion-forward"></i>
+          Share
+		  </a>
+		  <!-----------------------
+		  <a ng-href="#" ng-click="addBookmark()" class="bookmark">
+                  <i class="icon ion-bookmark" ng-class="{'active': isBookmarked() == true}"></i>
+                </a>
+				--------------->
+              
+        <a class="tab-item assertive" href="#" ng-click="bookmarkItem(post.id)">
+          <i ng-class="{'icon ion-ios-star': bookmarked, 'icon ion-ios-star-outline': !bookmarked}"></i>
+          Bookmark
+        </a>
+		 
+      </div>
+
+    
+	
+
+   <!-- <div class="item item-divider">Comments</div>
+      <ion-list ng-if="comments_status">
+        <ion-item ng-repeat="comment in comments">
+          <div class="item-body">
+            <h3 ng-bind-html="comment.author_name"></h3>
+            <p ng-bind-html="comment.content.rendered"></p>
+          </div>
+		  -->
+		  
+        </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

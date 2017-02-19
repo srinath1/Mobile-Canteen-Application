@@ -1,0 +1,19 @@
+<ion-view title="Are You Better Than A 7Th Grade">
+<ion-header-bar class="bar-positive">
+      <h1 class="title">FAQ example</h1>
+    </ion-header-bar>
+
+    <ion-content>
+     <div class="card  ">
+	  <div class="item item-text-wrap">
+      <ion-list>
+        <ion-item ng-click="showOrDont($index)" ng-repeat="question in faqArr">{{ question.question }}
+          <p ng-show="show == $index" class="item-icon-accordian inset">A: {{ question.answer }}</p>
+        </ion-item>
+		</div>
+		</div>
+      </ion-list>
+    </ion-content>
+    </ion-view>
+
+	

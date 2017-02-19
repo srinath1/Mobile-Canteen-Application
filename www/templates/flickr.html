@@ -1,0 +1,10 @@
+ <ion-view view-title="Everest Flickr">
+    <ion-content class="has-header">
+     <ion-list>
+     	<ion-item class="item-icon-left item-text-wrap" collection-repeat="album in photoList" ng-click="openAlbum(album.id)">
+     	<i class="icon ion-ios-photos positive"></i>
+     	{{album.title['_content']}}
+     	</ion-item>
+     </ion-list>
+    </ion-content>
+  </ion-view>

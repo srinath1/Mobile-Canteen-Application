@@ -1,0 +1,25 @@
+<ion-view view-title="{{selected_.title}}">
+  	<ion-content>
+    	<div class="list card">
+         
+         <div class="item item-image">
+         	  <img ng-src="{{selected_.image}}"/>
+         </div>
+         <div class="item">
+            <h2 class="post-title">{{selected_.title}}</h2>
+         </div>
+         <div class="item">
+            <h2 class="post-title button button-small button-assertive button-block">Price: {{selected_.price}}DKK<a class="button button-small button-assertive">BUY NOW</a></h2>
+         </div>
+         <div class="item tabs tabs-secondary">
+            <div class="button-bar">
+                <a class="button button-positive"  ng-class="{'active':details == true}">Details</a>
+               
+            </div>
+         </div>
+         <div class="item item-body" ng-show="details" dir ng-bind-html="selected_.description">
+         </div>
+        
+    	</div>
+  </ion-content>
+</ion-view>

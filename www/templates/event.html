@@ -1,0 +1,42 @@
+<ion-view  view-title=" This Month's event">
+
+<ion-content >
+<ion-list>
+
+<div class="item post-title" ng-repeat="page in pages">
+	<ion-item class="item-icon-top" > 
+  		
+		<img ng-if="page.better_featured_image" ng-src="{{page.better_featured_image.source_url}}" class="aligntop" /> 
+		<h2 ng-bind-html="page.title.rendered"></h2>
+		<p>{{page.date}}</p>
+  		
+	
+  		<div  class="item-text-wrap" ng-if="page.content.rendered" ng-bind-html="page.content.rendered | html_filters"></div>
+			</ion-item>
+	</ion-list>
+			
+		
+    
+
+      
+        <div class="item tabs tabs-energy tabs-icon-left">
+    
+ <a class="tab-item"  ng-click="shareAnywhere(post.title.rendered, post.link)">
+          <i class="icon ion-forward"></i>
+          Share
+		  </a>
+       
+              
+       
+		 
+      </div>
+
+    
+	</ion-content>
+	
+	
+		
+  		
+	
+  		
+</ion-view>

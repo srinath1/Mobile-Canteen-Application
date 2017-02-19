@@ -1,0 +1,16 @@
+ <ion-view view-title="Eurest Event's" >
+ <ion-content>
+ <div class="card">
+    <div ui-calendar='uiConfig.calendar' ng-model='eventSources' width='300' height='400'></div>
+  </div>
+  <div class="list">
+    <div class="item item item-text-wrap" style="text-align: left;">
+      events in {{select_date}}
+    </div>
+    <div class="item balanced-bg  item-text-wrap" ng-repeat="event in events_in_select_date" >
+      {{event.title}}
+      
+    </div>
+  </div>
+   </ion-content>
+</ion-view>

@@ -1,0 +1,56 @@
+<ion-view view-title="Wikisearch">
+   <ion-content>
+   
+</div>
+
+    <div ng-controller="wikiController" >
+	
+	<div class="item item-input-inset">
+  <label class="item-input-wrapper">
+  <!-- The actual input tag which is bound to the todoInput using ng-model -->
+    <input type="text" placeholder="Enter f.ex Copenhagen" ng-model="content" size="30"> 
+  </label>
+  <!-- Our button thay will call our funtion to add a new todo item -->
+  
+</div>
+<div>
+ <div class="item tabs tabs-secondary">
+            <div class="button-bar">
+                <a class="button button-positive"  ng-click="getResults()"  >Search</a>
+               
+            </div>
+         </div>
+
+
+  
+  
+</div>
+	
+ 
+
+	
+        
+         <div class="list list-inset" >
+            <br/>
+            
+            
+                <div class="  item item-text-wrap" ng-repeat="result in results | orderObjectBy: 'result.index'">
+                    <h3><a ng-href="{{result.link}}" target="_blank">{{result.title}}</a></h3>
+                    <p>{{result.extract}}<p>
+                
+                <div> <a href="" ng-click="open()"></a></div>
+           
+        </div>
+		
+    </div>
+</div>
+</ion-content>
+</ion-view>
+
+           
+
+            
+
+            
+            
+        

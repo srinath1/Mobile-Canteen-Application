@@ -1,0 +1,48 @@
+<ion-view title = "Home">
+  <ion-content class = "scroll-content">
+    <ion-list>
+     <ion-item>
+      <div class="list">
+       <a  ng-repeat="movie in movies" href="#/detail/{{movie.id}}"class="item item-thumbnail-left">
+          <img ng-src="img/{{ movie.images.cover }}">
+          <h2>{{ movie.title }}</h2>
+          <h4>{{ movie.meta.releaseYear}}</h4>
+        </a>
+      </div>
+     </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

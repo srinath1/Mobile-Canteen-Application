@@ -1,0 +1,31 @@
+<ion-view view-title="Contact">
+  <ion-content>
+  <div class="list">
+   <div class="item item-thumbnail-left item item-text-wrap"  ng-repeat=" sound in model.sounds" >
+   <img ng-src="{{sound.image}}"	 alt=""/>
+		<h2>Name:{{sound.Name}}</h2>
+		<p> Designation:{{sound.Designation}}</h2>
+		<p>Info:{{sound.info|limitTo:52}}</p>
+		<p>Tel:{{sound.Tel}}</p>
+   
+  
+	
+		
+		
+		
+		
+		
+	</div>
+	</div>
+	
+	<div>
+	 <button class="button button-block button-energized  ng-click="shareAnywhere(post.title.rendered, post.link)">
+          <i class="icon ion-forward"></i>
+          Send feedback
+		  </a>
+		  </div>
+		  </button>
+		  </div>
+		 
+		  </ion-content>
+</ion-view>

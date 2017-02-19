@@ -1,0 +1,67 @@
+<div ng-app="weatherApp" ng-controller="MainCtrl">
+  <ion-side-menus>
+    <ion-side-menu side="left">
+      <ion-header-bar>
+        <h1 class="title">Settings</h1>
+      </ion-header-bar>
+      <ion-content ng-controller="SettingsCtrl">
+        <ion-item class="item-divider">Units</ion-item>
+        <ion-radio menu-close ng-model="settings.units" value="f">Imperial</ion-radio>
+        <ion-radio menu-close ng-model="settings.units" value="c">Metric</ion-radio>
+        <ion-item><a href="https://www.yahoo.com/?ilc=401" target="_blank"><img src="https://poweredby.yahoo.com/purple.png" /></a></ion-item>
+      </ion-content>
+    </ion-side-menu>
+    
+    <ion-side-menu-content>
+      <ion-header-bar class="bar-royal">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        <h1 class="title">Weather App Zipline</h1>   
+      </ion-header-bar>
+      <ion-content class="maincontent"  scroll="true">
+        
+        <!-- Today's weather conditions -->
+        <div class="card">
+          <div class="item item-divider">
+            <h1>{{location.city}} {{location.region}}</h1>
+          </div>
+          <div class="item item-body">
+            <div class="row">
+              <div class="col">
+                <h1 class="royal" style="font-size: 5em; display: inline;">{{condition.temp}}</h1> &deg;{{units.temperature}}
+                <p>{{date | date}}</p>
+              </div>
+              <div class="col">
+                <h2><i class="wi wi-yahoo-{{condition.code}}"></i>
+                {{condition.text}}
+                </h2>
+                <p>wind: {{wind.speed}} {{units.speed}}</p>
+                <p>humidity: {{atmosphere.humidity}}%</p>
+                <p>pressure: {{atmosphere.pressure}} {{units.pressure}}</p>
+              </div>   
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- 10-day Forecast -->
+        <ul class="list">
+          <li ng-repeat="item in forecast" class="item">
+            <div class="row">
+              <div class="col col-20">
+                <h2>{{item.day}}</h2>
+              </div>
+              <div class="col">
+                <i class="ion-arrow-up-c royal"></i> {{item.high}}&deg;
+                <i class="ion-arrow-down-c royal"></i> {{item.low}}&deg;
+              </div>
+              <div class="col">
+                {{item.text | lowercase}}
+                <i class="royal wi wi-yahoo-{{item.code}}"></i>
+              </div>
+            </div>   
+          </li>
+        </ul>
+      </ion-content>  
+    </ion-side-menu-content>
+  </ion-side-menus>
+</div>
